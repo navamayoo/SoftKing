@@ -3,6 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StudentCourseController;
+use App\Http\Controllers\MailController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +19,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//Route::resource('student', StudentController::class);
+//Route::resource('user', UserController::class);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resource('student', StudentController::class);
+Route::resource('course',CourseController::class);
+Route::resource('student-course', StudentCourseController::class);
+Route::get('send-mail',[MailController::class, 'sendMail']);

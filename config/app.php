@@ -50,7 +50,13 @@ return [
     | the Artisan command line tool. You should set this to the root of
     | your application so that it is used when running Artisan tasks.
     |
+    
+
+    Date Format 
     */
+        'date_format' => 'd/m/Y',
+        'date_format_javascript' => 'DD/MM/YYYY',
+
 
     'url' => env('APP_URL', 'http://localhost'),
 
